@@ -12,19 +12,18 @@ class MBSpider(Spider):
 
     def parse(self, response):
 		sel = Selector(response)
-#		sites = sel.xpath('//ul/li')
-		sites = sel.xpath('/div[@class="journeyresult"]/div[@class="content"]/div[@class="JourneyList"]/ul')
+		sites = sel.xpath('//ul[@class="journey standard none"]')
 		items = []
 		for site in sites:
 			item = FareItem()
-			item['depcity'] = map(unicode.strip, site.xpath('/li[@class="two"]/p[1]/text()[3]').extract())
-			item['deplocation'] = map(unicode.strip, site.xpath('/li[@class="two"]/p[1]/text()[5]').extract())
-			item['deptime'] = map(unicode.strip, site.xpath('/li[@class="two"][position()>1]/p[1]/text()[2][normalize-space()]').extract())
-			item['arrcity'] = map(unicode.strip, site.xpath('/p[@class="arrive"]/text()[3]').extract())
-			item['arrlocation'] = map(unicode.strip, site.xpath('/p[@class="arrive"]/text()[5]').extract())
-			item['arrtime'] = map(unicode.strip, site.xpath('/p[@class="arrive"]/text()[2]').extract())
-			item['duration'] = map(unicode.strip, site.xpath('/li[@class="three"][position()>1]/p/text()').extract())
-			item['fare'] = map(unicode.strip, sel.xpath('/li[@class="five"][position()>1]/p/text()[normalize-space()]').extract())
+			item['depcity'] = map(unicode.strip, site.xpath('.//li[@class="two"]/p[1]/text()[3]').extract())
+			item['deplocation'] = map(unicode.strip, site.xpath('.//li[@class="two"]/p[1]/text()[5]').extract())
+			item['deptime'] = map(unicode.strip, site.xpath('.//li[@class="two"]/p[1]/text()[2][normalize-space()]').extract())
+			item['arrcity'] = map(unicode.strip, site.xpath('.//p[@class="arrive"]/text()[3]').extract())
+			item['arrlocation'] = map(unicode.strip, site.xpath('.//p[@class="arrive"]/text()[5]').extract())
+			item['arrtime'] = map(unicode.strip, site.xpath('.//p[@class="arrive"]/text()[2]').extract())
+			item['duration'] = map(unicode.strip, site.xpath('.//li[@class="three"]/p/text()').extract())
+			item['fare'] = map(unicode.strip, site.xpath('.//li[@class="five"]/p/text()[normalize-space()]').extract())
 			items.append(item)
 #		filename = response.url.split("/")[-2]
 #		open(filename, 'wb').write(filename)
