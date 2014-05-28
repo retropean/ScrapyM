@@ -1,2 +1,0 @@
-in web browser, to shut down selenium server..
-http://localhost:4444/selenium-server/driver/?cmd=shutDownSeleniumServer

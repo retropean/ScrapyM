@@ -19,5 +19,4 @@ class FareItem(Item):
 	timescraped = Field()
 	datescraped = Field()
 	urlscraped = Field()
-	# last_updated = Field(serializer=str)
 pass
