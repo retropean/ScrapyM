@@ -10,3 +10,5 @@ To select the dates to scrape, either use the <code>StartURLGenerator.xlsx</code
 To crawl and dump CSV with data, navigate to the root directory in the command line and run the following:
 
 <code>scrapy crawl mb -o [filename].csv -t csv</code>
+
+The script will generate a .csv file in the root directory that will contain all of the scraped data.
