@@ -2,7 +2,9 @@ ScrapyM
 =======
 
 ScrapyM
-Crawls MB website & grabs all fares for a given date.
+This is a python script that crawls the MB website & grabs all fares for a given date.
 
-To crawl and dump CSV with data:
-scrapy crawl mb -o items44.csv -t csv
+To run, you will need to install Python, Scrapy and all  of its dependencies as mentioned in the Scrapy documentation.
+
+To crawl and dump CSV with data, navigate to the root directory in the command line and run the following:
+scrapy crawl mb -o [filename].csv -t csv
