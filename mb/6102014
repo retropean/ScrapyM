@@ -1,0 +1,72 @@
+fare,origcity,datescraped,destlocation,origtime,destcity,origlocation,duration,desttime
+$6.00,"Washington, DC",10:51:06.422000,White Marsh Mall (Opp Red Lobster),5:55 AM,"Baltimore, MD",Union Station.,1hrs 20mins,7:15 AM
+$20.00,"Washington, DC",10:51:06.424000,White Marsh Mall (Opp Red Lobster),8:50 AM,"Baltimore, MD",Union Station.,1hrs 20mins,10:10 AM
+$6.00,"Washington, DC",10:51:06.426000,White Marsh Mall (Opp Red Lobster),11:15 AM,"Baltimore, MD",Union Station.,1hrs 20mins,12:35 PM
+$15.00,"Washington, DC",10:51:06.427000,White Marsh Mall (Opp Red Lobster),4:15 PM,"Baltimore, MD",Union Station.,1hrs 20mins,5:35 PM
+$20.00,"Washington, DC",10:51:06.429000,White Marsh Mall (Opp Red Lobster),6:45 PM,"Baltimore, MD",Union Station.,1hrs 25mins,8:10 PM
+$6.00,"Washington, DC",10:51:06.431000,White Marsh Mall (Opp Red Lobster),7:25 PM,"Baltimore, MD",Union Station.,1hrs 20mins,8:45 PM
+$6.00,"Washington, DC",10:51:06.433000,White Marsh Mall (Opp Red Lobster),8:00 PM,"Baltimore, MD",Union Station.,1hrs 25mins,9:25 PM
+$9.00,"Washington, DC",10:51:06.435000,White Marsh Mall (Opp Red Lobster),9:45 PM,"Baltimore, MD",Union Station.,1hrs 20mins,11:05 PM
+$6.00,"Washington, DC",10:51:06.437000,White Marsh Mall (Opp Red Lobster),10:10 PM,"Baltimore, MD",Union Station.,1hrs 10mins,11:20 PM
+$46.00,"Washington, DC",10:51:11.148000,MARTA Civic Center - 435 W Peachtree St NW,9:00 AM,"Atlanta, GA",Union Station.,13hrs 0mins,10:00 PM
+$46.00,"Washington, DC",10:51:11.150000,MARTA Civic Center - 435 W Peachtree St NW,9:30 PM,"Atlanta, GA",Union Station.,13hrs 0mins,10:30 AM
+$37.00,"Washington, DC",10:51:18.666000,South Station - Gate 13,8:50 AM,"Boston, MA",Union Station.,10hrs 45mins,7:35 PM
+$37.00,"Washington, DC",10:51:18.669000,South Station - Gate 13,6:45 PM,"Boston, MA",Union Station.,10hrs 30mins,5:15 AM
+$51.00,"Washington, DC",10:51:24.730000,Downtown Terminal,8:00 PM,"Buffalo, NY",Union Station.,11hrs 20mins,7:20 AM
+$32.00,"Washington, DC",10:51:31.347000,(Temporary Location) Outside Charlotte Convention Center - Eastbound MLK Jr Blvd,7:20 AM,"Charlotte, NC",Union Station.,7hrs 50mins,3:10 PM
+$36.00,"Washington, DC",10:51:31.349000,(Temporary Location) Outside Charlotte Convention Center - Eastbound MLK Jr Blvd,11:00 PM,"Charlotte, NC",Union Station.,7hrs 50mins,6:50 AM
+fare,origcity,datescraped,destlocation,timescraped,origtime,destcity,origlocation,duration,desttime
+$6.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:52:52.920000,5:55 AM,"Baltimore, MD",Union Station.,1hrs 20mins,7:15 AM
+$20.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:52:52.922000,8:50 AM,"Baltimore, MD",Union Station.,1hrs 20mins,10:10 AM
+$6.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:52:52.923000,11:15 AM,"Baltimore, MD",Union Station.,1hrs 20mins,12:35 PM
+$15.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:52:52.925000,4:15 PM,"Baltimore, MD",Union Station.,1hrs 20mins,5:35 PM
+$20.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:52:52.926000,6:45 PM,"Baltimore, MD",Union Station.,1hrs 25mins,8:10 PM
+$6.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:52:52.928000,7:25 PM,"Baltimore, MD",Union Station.,1hrs 20mins,8:45 PM
+$6.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:52:52.929000,8:00 PM,"Baltimore, MD",Union Station.,1hrs 25mins,9:25 PM
+$9.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:52:52.931000,9:45 PM,"Baltimore, MD",Union Station.,1hrs 20mins,11:05 PM
+$6.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:52:52.932000,10:10 PM,"Baltimore, MD",Union Station.,1hrs 10mins,11:20 PM
+$46.00,"Washington, DC",2014-05-28,MARTA Civic Center - 435 W Peachtree St NW,10:52:59.953000,9:00 AM,"Atlanta, GA",Union Station.,13hrs 0mins,10:00 PM
+$46.00,"Washington, DC",2014-05-28,MARTA Civic Center - 435 W Peachtree St NW,10:52:59.954000,9:30 PM,"Atlanta, GA",Union Station.,13hrs 0mins,10:30 AM
+$37.00,"Washington, DC",2014-05-28,South Station - Gate 13,10:53:04.839000,8:50 AM,"Boston, MA",Union Station.,10hrs 45mins,7:35 PM
+$37.00,"Washington, DC",2014-05-28,South Station - Gate 13,10:53:04.841000,6:45 PM,"Boston, MA",Union Station.,10hrs 30mins,5:15 AM
+$51.00,"Washington, DC",2014-05-28,Downtown Terminal,10:53:11.779000,8:00 PM,"Buffalo, NY",Union Station.,11hrs 20mins,7:20 AM
+$32.00,"Washington, DC",2014-05-28,(Temporary Location) Outside Charlotte Convention Center - Eastbound MLK Jr Blvd,10:53:16.456000,7:20 AM,"Charlotte, NC",Union Station.,7hrs 50mins,3:10 PM
+$36.00,"Washington, DC",2014-05-28,(Temporary Location) Outside Charlotte Convention Center - Eastbound MLK Jr Blvd,10:53:16.457000,11:00 PM,"Charlotte, NC",Union Station.,7hrs 50mins,6:50 AM
+$25.00,"Washington, DC",2014-05-28,Falling Branch Park & Ride Exit 118A,10:53:23.022000,9:00 AM,"Christiansburg, VA",Union Station.,4hrs 45mins,1:45 PM
+$25.00,"Washington, DC",2014-05-28,Falling Branch Park & Ride Exit 118A,10:53:23.024000,9:30 PM,"Christiansburg, VA",Union Station.,4hrs 45mins,2:15 AM
+$18.00,"Washington, DC",2014-05-28,Willard St. outside of Durham Station Transportation Center,10:53:32.201000,7:20 AM,"Durham, NC",Union Station.,4hrs 50mins,12:10 PM
+$18.00,"Washington, DC",2014-05-28,Willard St. outside of Durham Station Transportation Center,10:53:32.202000,11:10 AM,"Durham, NC",Union Station.,5hrs 15mins,4:25 PM
+$21.00,"Washington, DC",2014-05-28,Willard St. outside of Durham Station Transportation Center,10:53:32.204000,11:00 PM,"Durham, NC",Union Station.,4hrs 50mins,3:50 AM
+$5.00,"Washington, DC",2014-05-28,Hampton Transit Center - 2 W Pembroke Ave,10:53:36.843000,6:45 AM,"Hampton, VA",Union Station.,3hrs 55mins,10:40 AM
+$15.00,"Washington, DC",2014-05-28,Hampton Transit Center - 2 W Pembroke Ave,10:53:36.845000,11:10 AM,"Hampton, VA",Union Station.,3hrs 50mins,3:00 PM
+$13.00,"Washington, DC",2014-05-28,Hampton Transit Center - 2 W Pembroke Ave,10:53:36.846000,7:55 PM,"Hampton, VA",Union Station.,3hrs 55mins,11:50 PM
+$25.00,"Washington, DC",2014-05-28,Knoxville Transit Center,10:53:43.576000,9:00 AM,"Knoxville, TN",Union Station.,9hrs 15mins,6:15 PM
+$25.00,"Washington, DC",2014-05-28,Knoxville Transit Center,10:53:43.578000,9:30 PM,"Knoxville, TN",Union Station.,9hrs 15mins,6:45 AM
+$22.00,"Washington, DC",2014-05-28,Mountaineer Station - 1112 Van Voorhis Rd,10:53:50.459000,7:10 AM,"Morgantown, WV",Union Station.,4hrs 30mins,11:40 AM
+$22.00,"Washington, DC",2014-05-28,Mountaineer Station - 1112 Van Voorhis Rd,10:53:50.461000,3:10 PM,"Morgantown, WV",Union Station.,4hrs 30mins,7:40 PM
+$15.00,"Washington, DC",2014-05-28,U of Delaware - Parking Lot #6 on Christiana Dr,10:54:00.434000,5:55 AM,"Newark, DE",Union Station.,2hrs 20mins,8:15 AM
+$15.00,"Washington, DC",2014-05-28,U of Delaware - Parking Lot #6 on Christiana Dr,10:54:00.436000,11:15 AM,"Newark, DE",Union Station.,2hrs 30mins,1:45 PM
+$16.00,"Washington, DC",2014-05-28,U of Delaware - Parking Lot #6 on Christiana Dr,10:54:00.438000,7:25 PM,"Newark, DE",Union Station.,2hrs 20mins,9:45 PM
+$16.00,"Washington, DC",2014-05-28,U of Delaware - Parking Lot #6 on Christiana Dr,10:54:00.439000,9:45 PM,"Newark, DE",Union Station.,2hrs 20mins,12:05 AM
+fare,origcity,datescraped,destlocation,timescraped,origtime,destcity,origlocation,duration,desttime
+$6.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:56:28.804000,5:55 AM,"Baltimore, MD",Union Station.,1hrs 20mins,7:15 AM
+$20.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:56:28.806000,8:50 AM,"Baltimore, MD",Union Station.,1hrs 20mins,10:10 AM
+$6.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:56:28.807000,11:15 AM,"Baltimore, MD",Union Station.,1hrs 20mins,12:35 PM
+$15.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:56:28.809000,4:15 PM,"Baltimore, MD",Union Station.,1hrs 20mins,5:35 PM
+$20.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:56:28.811000,6:45 PM,"Baltimore, MD",Union Station.,1hrs 25mins,8:10 PM
+$6.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:56:28.812000,7:25 PM,"Baltimore, MD",Union Station.,1hrs 20mins,8:45 PM
+$6.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:56:28.814000,8:00 PM,"Baltimore, MD",Union Station.,1hrs 25mins,9:25 PM
+$9.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:56:28.815000,9:45 PM,"Baltimore, MD",Union Station.,1hrs 20mins,11:05 PM
+$6.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:56:28.817000,10:10 PM,"Baltimore, MD",Union Station.,1hrs 10mins,11:20 PM
+$46.00,"Washington, DC",2014-05-28,MARTA Civic Center - 435 W Peachtree St NW,10:56:34.528000,9:00 AM,"Atlanta, GA",Union Station.,13hrs 0mins,10:00 PM
+$46.00,"Washington, DC",2014-05-28,MARTA Civic Center - 435 W Peachtree St NW,10:56:34.530000,9:30 PM,"Atlanta, GA",Union Station.,13hrs 0mins,10:30 AM
+fare,origcity,datescraped,destlocation,timescraped,origtime,destcity,origlocation,duration,desttime
+$6.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:59:49.161000,5:55 AM,"Baltimore, MD",Union Station.,1hrs 20mins,7:15 AM
+$20.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:59:49.162000,8:50 AM,"Baltimore, MD",Union Station.,1hrs 20mins,10:10 AM
+$6.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:59:49.164000,11:15 AM,"Baltimore, MD",Union Station.,1hrs 20mins,12:35 PM
+$15.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:59:49.165000,4:15 PM,"Baltimore, MD",Union Station.,1hrs 20mins,5:35 PM
+$20.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:59:49.167000,6:45 PM,"Baltimore, MD",Union Station.,1hrs 25mins,8:10 PM
+$6.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:59:49.168000,7:25 PM,"Baltimore, MD",Union Station.,1hrs 20mins,8:45 PM
+$6.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:59:49.170000,8:00 PM,"Baltimore, MD",Union Station.,1hrs 25mins,9:25 PM
+$9.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:59:49.172000,9:45 PM,"Baltimore, MD",Union Station.,1hrs 20mins,11:05 PM
+$6.00,"Washington, DC",2014-05-28,White Marsh Mall (Opp Red Lobster),10:59:49.173000,10:10 PM,"Baltimore, MD",Union Station.,1hrs 10mins,11:20 PM

@@ -8,13 +8,15 @@ from scrapy.item import Item, Field
 class FareItem(Item):
     # define the fields for your item here like:
     # name = Field()
-	deplocation = Field()	
-	deptime = Field()
-	depcity = Field()
-	arrcity = Field()
-	arrlocation = Field()
-	arrtime = Field()
+	origlocation = Field()	
+	origtime = Field()
+	origcity = Field()
+	destcity = Field()
+	destlocation = Field()
+	desttime = Field()
 	duration = Field()
 	fare = Field()
+	timescraped = Field()
+	datescraped = Field()
 	# last_updated = Field(serializer=str)
 pass
