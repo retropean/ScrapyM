@@ -12,13 +12,15 @@ class MBSpider(Spider):
 	allowed_domains = ["megabus.com"]
 	#Get date, add 14 days to find data for 14 days out.
 	now = datetime.datetime.now() + datetime.timedelta(days=14)
-	year = now.year
-	day = now.day
-	month = now.month
-	print year
-	print day
-	print month
-	start_urls = ["http://us.megabus.com/JourneyResults.aspx?originCode=142&destinationCode=143&outboundDepartureDate=%2f14%2f2014&inboundDepartureDate=&passengerCount=1&transportType=0&concessionCount=0&nusCount=0&outboundWheelchairSeated=0&outboundOtherDisabilityCount=0&inboundWheelchairSeated=0&inboundOtherDisabilityCount=0&outboundPcaCount=0&inboundPcaCount=0&promotionCode=&withReturn=0",
+	fourteendayyear = now.year
+	fourteendayday = now.day
+	fourteendaymonth = now.month
+	#Get date, add 1 day to find data for 1 day out. This spider will get data for both.
+	now = datetime.datetime.now() + datetime.timedelta(days=1)
+	onedayyear = now.year
+	onedayday = now.day
+	onedaymonth = now.month
+	start_urls = ["http://us.megabus.com/JourneyResults.aspx?originCode=142&destinationCode=143&outboundDepartureDate=%['fourteendaymonth']f['fourteendayday']%2f['fourteendayyear']&inboundDepartureDate=&passengerCount=1&transportType=0&concessionCount=0&nusCount=0&outboundWheelchairSeated=0&outboundOtherDisabilityCount=0&inboundWheelchairSeated=0&inboundOtherDisabilityCount=0&outboundPcaCount=0&inboundPcaCount=0&promotionCode=&withReturn=0",
 "http://us.megabus.com/JourneyResults.aspx?originCode=142&destinationCode=289&outboundDepartureDate=6%2f14%2f2014&inboundDepartureDate=&passengerCount=1&transportType=0&concessionCount=0&nusCount=0&outboundWheelchairSeated=0&outboundOtherDisabilityCount=0&inboundWheelchairSeated=0&inboundOtherDisabilityCount=0&outboundPcaCount=0&inboundPcaCount=0&promotionCode=&withReturn=0",
 "http://us.megabus.com/JourneyResults.aspx?originCode=142&destinationCode=94&outboundDepartureDate=6%2f14%2f2014&inboundDepartureDate=&passengerCount=1&transportType=0&concessionCount=0&nusCount=0&outboundWheelchairSeated=0&outboundOtherDisabilityCount=0&inboundWheelchairSeated=0&inboundOtherDisabilityCount=0&outboundPcaCount=0&inboundPcaCount=0&promotionCode=&withReturn=0",
 "http://us.megabus.com/JourneyResults.aspx?originCode=142&destinationCode=95&outboundDepartureDate=6%2f14%2f2014&inboundDepartureDate=&passengerCount=1&transportType=0&concessionCount=0&nusCount=0&outboundWheelchairSeated=0&outboundOtherDisabilityCount=0&inboundWheelchairSeated=0&inboundOtherDisabilityCount=0&outboundPcaCount=0&inboundPcaCount=0&promotionCode=&withReturn=0",
