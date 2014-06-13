@@ -11,4 +11,8 @@ To crawl and dump CSV with data, navigate to the root directory in the command l
 
 <code>scrapy crawl mb -o [filename].csv -t csv</code>
 
+Or simply execute:
+
+<code>mb/launch.bat</code>
+
 The script will generate a .csv file in the root directory that will contain all of the scraped data.
