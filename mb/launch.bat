@@ -1,4 +1,4 @@
-scrapy crawl mb -o test.csv -t csv
+scrapy crawl mb -o test1.csv -t csv
 timeout /t 86400 /nobreak
 scrapy crawl mb -o test2.csv -t csv
 timeout /t 86400 /nobreak
