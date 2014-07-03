@@ -122,15 +122,16 @@ class MBSpider(Spider):
 			[139, 273],	[139, 95],	[139, 123],	[139, 134],	[139, 145],	[453, 296],
 			[453, 294],	[453, 303],	[453, 297],	[451, 450],	[451, 297],	[140, 100],
 			[140, 103],	[140, 123],	[140, 137],	[145, 143],	[145, 273],	[145, 95],
-			[145, 123],	[145, 127],	[145, 134],	[145, 139],	[145, 142])
+			[145, 123],	[145, 127],	[145, 134],	[145, 139],	[145, 142],	[457, 316],
+			[457, 456], [457, 123], [456, 123], [456, 130])
 		url_pattern = "http://us.megabus.com/JourneyResults.aspx?originCode={origin}&destinationCode={dest}&outboundDepartureDate={month}%2f{day}%2f{year}&inboundDepartureDate=&passengerCount=1&transportType=0&concessionCount=0&nusCount=0&outboundWheelchairSeated=0&outboundOtherDisabilityCount=0&inboundWheelchairSeated=0&inboundOtherDisabilityCount=0&outboundPcaCount=0&inboundPcaCount=0&promotionCode=&withReturn=0"
 
 		for location in locations:
 			# This will produce a list of [origin, dest], so grab those and use them
 			# as falues for pluggin in to the url_pattern
 			self.start_urls.append(url_pattern.format(origin=location[0],
-					                             dest=location[1], day=day,
-					                             month=month, year=year))
+					                             dest=location[1], day=onedayday,
+					                             month=onedaymonth, year=onedayyear))
 			# All done, start_urls now is what was before, but adding a new
 			# dest/origin won't be tedious and changing global URL parameters is
 			# done in the url_pattern
