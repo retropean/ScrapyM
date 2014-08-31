@@ -13,19 +13,11 @@ class MBSpider(Spider):
 	start_urls = []
 
 	def __init__(self):
-		# Get date, add 14 days to find data for 14 days out.
-		fourteendays = datetime.datetime.now() + datetime.timedelta(days=14)
-		year = fourteendays.year
-		day = fourteendays.day
-		month = fourteendays.month
-
-		# Get date, add 1 day to find data for 1 day out.
-		# This spider will get data for both.
-
-		now = datetime.datetime.now() + datetime.timedelta(days=1)
-		onedayyear = now.year
-		onedayday = now.day
-		onedaymonth = now.month
+		daysout = input('Read how many days out: ')
+		now = datetime.datetime.now() + datetime.timedelta(days=daysout)
+		readyear = now.year
+		readday = now.day
+		readmonth = now.month
 		locations = (
 			[142, 143], [142, 289], [142, 94], [142, 95], [142, 99], [142, 101],
 			[142, 131], [142, 110], [142, 118], [142, 299], [142, 5], [142, 389],
@@ -131,8 +123,8 @@ class MBSpider(Spider):
 			# This will produce a list of [origin, dest], so grab those and use them
 			# as falues for pluggin in to the url_pattern
 			self.start_urls.append(url_pattern.format(origin=location[0],
-					                             dest=location[1], day=onedayday,
-					                             month=onedaymonth, year=onedayyear))
+					                             dest=location[1], day=readday,
+					                             month=readmonth, year=readyear))
 			# All done, start_urls now is what was before, but adding a new
 			# dest/origin won't be tedious and changing global URL parameters is
 			# done in the url_pattern
