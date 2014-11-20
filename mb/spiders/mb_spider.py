@@ -116,7 +116,8 @@ class MBSpider(Spider):
 			[140, 103],	[140, 123],	[140, 137],	[145, 143],	[145, 273],	[145, 95],
 			[145, 123],	[145, 127],	[145, 134],	[145, 139],	[145, 142],	[457, 316],
 			[457, 456], [457, 123], [456, 123], [456, 130], [462, 297], [462, 451],
-			[297, 462], [451, 462])
+			[297, 462], [451, 462], [466, 413], [413, 466], [466, 414], [466, 412],
+			[414, 466], [412, 466])
 		url_pattern = "http://us.megabus.com/JourneyResults.aspx?originCode={origin}&destinationCode={dest}&outboundDepartureDate={month}%2f{day}%2f{year}&inboundDepartureDate=&passengerCount=1&transportType=0&concessionCount=0&nusCount=0&outboundWheelchairSeated=0&outboundOtherDisabilityCount=0&inboundWheelchairSeated=0&inboundOtherDisabilityCount=0&outboundPcaCount=0&inboundPcaCount=0&promotionCode=&withReturn=0"
 
 		for location in locations:
