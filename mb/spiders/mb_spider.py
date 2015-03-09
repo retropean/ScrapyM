@@ -8,7 +8,7 @@ import time
 
 class MBSpider(Spider):
 	name = "mb"
-	download_delay = 5
+	download_delay = 1
 	allowed_domains = ["megabus.com"]
 	start_urls = []
 
