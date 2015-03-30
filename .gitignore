@@ -215,3 +215,4 @@ pip-log.txt
 .mr.developer.cfg
 *.exe
 *.csv
+mb/settings.py

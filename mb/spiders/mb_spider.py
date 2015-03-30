@@ -1,6 +1,6 @@
 from scrapy.spider import Spider
 from scrapy.selector import Selector
-
+from datetime import date, time
 from mb.items import FareItem
 
 import datetime
@@ -136,16 +136,65 @@ class MBSpider(Spider):
 		items = []
 		for site in sites:
 			item = FareItem()
-			item['origcity'] = map(unicode.strip, site.xpath('.//li[@class="two"]/p[1]/text()[3]').extract())
-			item['origlocation'] = map(unicode.strip, site.xpath('.//li[@class="two"]/p[1]/text()[5]').extract())
-			item['origtime'] = map(unicode.strip, site.xpath('.//li[@class="two"]/p[1]/text()[2][normalize-space()]').extract())
-			item['destcity'] = map(unicode.strip, site.xpath('.//p[@class="arrive"]/text()[3]').extract())
-			item['destlocation'] = map(unicode.strip, site.xpath('.//p[@class="arrive"]/text()[5]').extract())
-			item['desttime'] = map(unicode.strip, site.xpath('.//p[@class="arrive"]/text()[2]').extract())
-			item['duration'] = map(unicode.strip, site.xpath('.//li[@class="three"]/p/text()').extract())
-			item['fare'] = map(unicode.strip, site.xpath('.//li[@class="five"]/p/text()[normalize-space()]').extract())
+			item['origcity'] = str(map(unicode.strip, site.xpath('.//li[@class="two"]/p[1]/text()[3]').extract())).split("[u'")[1].split("']")[0]
+			item['origlocation'] = str(map(unicode.strip, site.xpath('.//li[@class="two"]/p[1]/text()[5]').extract())).split("[u'")[1].split("']")[0]
+			item['destcity'] = str(map(unicode.strip, site.xpath('.//p[@class="arrive"]/text()[3]').extract())).split("[u'")[1].split("']")[0]
+			item['destlocation'] = str(map(unicode.strip, site.xpath('.//p[@class="arrive"]/text()[5]').extract())).split("[u'")[1].split("']")[0]
+			item['duration'] = str(map(unicode.strip, site.xpath('.//li[@class="three"]/p/text()').extract())).split("[u'")[1].split("']")[0]
 			item['timescraped'] = str(datetime.datetime.now().time())
 			item['datescraped'] = str(datetime.datetime.now().date())
-			item['urlscraped'] = str(response.url)
+
+			#turn fare into an int
+			rawfare = str(map(unicode.strip, site.xpath('.//li[@class="five"]/p/text()[normalize-space()]').extract())).split("[u'")[1].split("']")[0]
+			rawfare = rawfare[1:]
+			rawfare = float(rawfare)
+			item['fare'] = rawfare
+			
+			#parse out departure date
+			url = str(response.url)
+			month = url[url.index('Date=')+5:url.index('%2f')]
+			year = url[url.index('&in')-4:url.index('&in')]
+			day = url[url.index('%2f')+3:url.index('%2f'+year)]
+			year=int(year)
+			day=int(day)
+			month=int(month)
+			item['departuredate'] = date(year, month, day)
+
+			#fix origtime
+			origintime = str(map(unicode.strip, site.xpath('.//li[@class="two"]/p[1]/text()[2][normalize-space()]').extract())).split("[u'")[1].split("']")[0].replace('\\xa0', ' ')
+			hour = origintime[0:origintime.index(':')]
+			minutes = origintime[origintime.index(':')+1:origintime.index(':')+3]
+			pmindicator = origintime[len(origintime)-2:len(origintime)]
+			hour = int(hour)
+			minutes = int(minutes)
+			if pmindicator == "PM":
+				if hour == 12:
+					hour = 12
+				else:
+					hour = hour + 12
+			if pmindicator == "AM":
+				if hour == 12:
+					hour = 0
+			origintime = datetime.time(hour, minutes)
+			item['origtime'] = origintime
+
+			#fix desttime
+			destinationtime = str(map(unicode.strip, site.xpath('.//p[@class="arrive"]/text()[2]').extract())).split("[u'")[1].split("']")[0].replace('\\xa0', ' ')
+			hour = destinationtime[0:destinationtime.index(':')]
+			minutes = destinationtime[destinationtime.index(':')+1:destinationtime.index(':')+3]
+			pmindicator = destinationtime[len(destinationtime)-2:len(destinationtime)]
+			hour = int(hour)
+			minutes = int(minutes)
+			if pmindicator == "PM":
+				if hour == 12:
+					hour = 12
+				else:
+					hour = hour + 12
+			else:
+				if hour == 12:
+					hour = 0
+			destinationtime = datetime.time(hour, minutes)
+			item['desttime'] = destinationtime
+			
 			items.append(item)
 		return items
