@@ -12,9 +12,9 @@ class MBSpider(Spider):
 	allowed_domains = ["megabus.com"]
 	start_urls = []
 
-	def __init__(self):
-		daysout = input('Read how many days out: ')
-		now = datetime.datetime.now() + datetime.timedelta(days=daysout)
+	def __init__(self, daysoutcmmd=0, *args, **kwargs):
+		self.daysout = daysoutcmmd
+		now = datetime.datetime.now() + datetime.timedelta(int(self.daysout))
 		readyear = now.year
 		readday = now.day
 		readmonth = now.month
