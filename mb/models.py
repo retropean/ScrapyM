@@ -23,7 +23,7 @@ class Fares(DeclarativeBase):
 	origlocation = Column('origlocation', String, nullable=True)
 	destcity = Column('dest', String, nullable=True)
 	destlocation = Column('destlocation', String, nullable=True)
-	duration = Column('duration', String, nullable=True)
+	duration = Column('duration', Time, nullable=True)
 	timescraped = Column('timescraped', Time, nullable=True)
 	datescraped = Column('datescraped', Date, nullable=True)
 	departuredate = Column('departuredate', Date, nullable=True)

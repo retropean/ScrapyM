@@ -140,15 +140,9 @@ class MBSpider(Spider):
 			item['origlocation'] = str(map(unicode.strip, site.xpath('.//li[@class="two"]/p[1]/text()[5]').extract())).split("[u'")[1].split("']")[0]
 			item['destcity'] = str(map(unicode.strip, site.xpath('.//p[@class="arrive"]/text()[3]').extract())).split("[u'")[1].split("']")[0]
 			item['destlocation'] = str(map(unicode.strip, site.xpath('.//p[@class="arrive"]/text()[5]').extract())).split("[u'")[1].split("']")[0]
-			item['duration'] = str(map(unicode.strip, site.xpath('.//li[@class="three"]/p/text()').extract())).split("[u'")[1].split("']")[0]
 			item['timescraped'] = str(datetime.datetime.now().time())
 			item['datescraped'] = str(datetime.datetime.now().date())
-
-			#turn fare into an int
-			rawfare = str(map(unicode.strip, site.xpath('.//li[@class="five"]/p/text()[normalize-space()]').extract())).split("[u'")[1].split("']")[0]
-			rawfare = rawfare[1:]
-			rawfare = float(rawfare)
-			item['fare'] = rawfare
+			item['fare'] = str(map(unicode.strip, site.xpath('.//li[@class="five"]/p/text()[normalize-space()]').extract())).split("[u'")[1].split("']")[0]
 			
 			#parse out departure date
 			url = str(response.url)
@@ -195,6 +189,15 @@ class MBSpider(Spider):
 					hour = 0
 			destinationtime = datetime.time(hour, minutes)
 			item['desttime'] = destinationtime
+			
+			#fix duration
+			durfix = str(map(unicode.strip, site.xpath('.//li[@class="three"]/p/text()').extract())).split("[u'")[1].split("']")[0]
+			hour = durfix[0:durfix.index('hrs')]
+			minutes = durfix[durfix.index('hrs')+4:durfix.index('mins')]
+			hour = int(hour)
+			minutes = int(minutes)
+			durfix = datetime.time(hour, minutes)
+			item['duration'] = durfix
 			
 			items.append(item)
 		return items
