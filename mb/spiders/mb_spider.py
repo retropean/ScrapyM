@@ -196,7 +196,7 @@ class MBSpider(Spider):
 			minutes = durfix[durfix.index('hrs')+4:durfix.index('mins')]
 			hour = int(hour)
 			minutes = int(minutes)
-			durfix = datetime.time(hour, minutes)
+			durfix = datetime.timedelta(hours=hour, minutes=minutes)
 			item['duration'] = durfix
 			
 			items.append(item)
