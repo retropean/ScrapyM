@@ -1,7 +1,7 @@
 ﻿SELECT fares.*, ca.amtrakcity as amtrakorig, cd.amtrakcity as amtrakdest FROM fares
 LEFT JOIN cities ca ON fares.orig = ca.mbcity
 LEFT JOIN cities cd ON fares.dest = cd.mbcity
-where datescraped = '4/21/2016'
+where datescraped = '12/15/2016'
 order by id
 limit 10
 

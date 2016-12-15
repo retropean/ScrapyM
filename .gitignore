@@ -219,3 +219,4 @@ mb/settings.py
 mb/settings.py
 
 .scrapy/
+mb/credentials.py
