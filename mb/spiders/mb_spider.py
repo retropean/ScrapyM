@@ -1,23 +1,28 @@
-from scrapy.spider import Spider
+import scrapy
+import datetime
+import time
+from scrapy.spiders import Spider
 from scrapy.selector import Selector
 from datetime import date, time
 from mb.items import FareItem
 
-import datetime
-import time
-
 class MBSpider(Spider):
+	custom_settings = {
+		"DOWNLOAD_DELAY": 5.0,
+		"RETRY_ENABLED": True,
+	}
 	name = "mb"
-	download_delay = 1
 	allowed_domains = ["megabus.com"]
-	start_urls = []
+	urls = []
 
 	def __init__(self, daysoutcmmd=0, *args, **kwargs):
 		self.daysout = daysoutcmmd
 		now = datetime.datetime.now() + datetime.timedelta(int(self.daysout))
-		readyear = now.year
-		readday = now.day
-		readmonth = now.month
+		self.readyear = now.year
+		self.readday = now.day
+		self.readmonth = now.month
+	
+	def start_requests(self):
 		locations = (
 			[142, 143], [142, 289], [142, 94], [142, 95], [142, 99], [142, 101],
 			[142, 131], [142, 110], [142, 118], [142, 299], [142, 5], [142, 389],
@@ -121,14 +126,10 @@ class MBSpider(Spider):
 		url_pattern = "http://us.megabus.com/JourneyResults.aspx?originCode={origin}&destinationCode={dest}&outboundDepartureDate={month}%2f{day}%2f{year}&inboundDepartureDate=&passengerCount=1&transportType=0&concessionCount=0&nusCount=0&outboundWheelchairSeated=0&outboundOtherDisabilityCount=0&inboundWheelchairSeated=0&inboundOtherDisabilityCount=0&outboundPcaCount=0&inboundPcaCount=0&promotionCode=&withReturn=0"
 
 		for location in locations:
-			# This will produce a list of [origin, dest], so grab those and use them
-			# as falues for pluggin in to the url_pattern
-			self.start_urls.append(url_pattern.format(origin=location[0],
-					                             dest=location[1], day=readday,
-					                             month=readmonth, year=readyear))
-			# All done, start_urls now is what was before, but adding a new
-			# dest/origin won't be tedious and changing global URL parameters is
-			# done in the url_pattern
+			self.urls.append(url_pattern.format(origin=location[0],dest=location[1], day=self.readday,month=self.readmonth, year=self.readyear))
+
+		for url in self.urls:
+			yield scrapy.Request(url=url, callback=self.parse)
 
 	def parse(self, response):
 		sel = Selector(response)
