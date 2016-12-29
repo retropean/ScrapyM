@@ -1,7 +1,7 @@
 ScrapyM
 =======
 
-This is a python script that crawls the MB website & grabs all fares for a given date. Stable with Scrapy 0.22.2, this will need to be updated to the current version at some point.
+This is a python script that crawls the MB website & grabs all fares for a given date. Stable with Scrapy 1.2.
 
 To run, you will need to install Python, Scrapy and all  of its dependencies as mentioned in the <a href="http://doc.scrapy.org/en/latest/intro/install.html#intro-install">Scrapy Installation guide</a>.
 
