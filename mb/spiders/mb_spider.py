@@ -4,6 +4,7 @@ import time
 from scrapy.spiders import Spider
 from scrapy.selector import Selector
 from datetime import date, time
+import time as timer
 from mb.items import FareItem
 
 class MBSpider(Spider):
@@ -19,8 +20,8 @@ class MBSpider(Spider):
 		self.daysout = daysoutcmmd
 		now = datetime.datetime.now() + datetime.timedelta(int(self.daysout))
 		self.readyear = now.year
-		self.readday = now.day
-		self.readmonth = now.month
+		self.readday = now.strftime('%d')
+		self.readmonth = now.strftime('%m')
 	
 	def start_requests(self):
 		locations = (
@@ -123,22 +124,25 @@ class MBSpider(Spider):
 			[457, 456], [457, 123], [456, 123], [456, 130], [462, 297], [462, 451],
 			[297, 462], [451, 462], [466, 413], [413, 466], [466, 414], [466, 412],
 			[414, 466], [412, 466])
-		url_pattern = "http://us.megabus.com/JourneyResults.aspx?originCode={origin}&destinationCode={dest}&outboundDepartureDate={month}%2f{day}%2f{year}&inboundDepartureDate=&passengerCount=1&transportType=0&concessionCount=0&nusCount=0&outboundWheelchairSeated=0&outboundOtherDisabilityCount=0&inboundWheelchairSeated=0&inboundOtherDisabilityCount=0&outboundPcaCount=0&inboundPcaCount=0&promotionCode=&withReturn=0"
+		url_pattern = "https://us.megabus.com/journey-planner/journeys?days=1&concessionCount=0&departureDate={year}-{month}-{day}&destinationId={dest}&inboundOtherDisabilityCount=0&inboundPcaCount=0&inboundWheelchairSeated=0&nusCount=0&originId={origin}&otherDisabilityCount=0&pcaCount=0&totalPassengers=1&wheelchairSeated=0"
 
 		for location in locations:
 			self.urls.append(url_pattern.format(origin=location[0],dest=location[1], day=self.readday,month=self.readmonth, year=self.readyear))
 
 		for url in self.urls:
 			yield scrapy.Request(url=url, callback=self.parse)
-
+	timer.sleep(5)
 	def parse(self, response):
 		sel = Selector(response)
-		sites = sel.xpath('//ul[@class="journey standard none"]|//ul[@class="journey standard seat"]')
+		sites = sel.xpath('//div[@class="panel panel-default ticket ng-tns-c9-1"]|//div[@class="panel panel-default ticket ng-tns-c9-1 cheapest"]')
+		print len(sites)
+		print sites
 		items = []
 		for site in sites:
+			print "yes"
 			item = FareItem()
 			item['origcity'] = str(map(unicode.strip, site.xpath('.//li[@class="two"]/p[1]/text()[3]').extract())).split("[u'")[1].split("']")[0]
-			item['origlocation'] = str(map(unicode.strip, site.xpath('.//li[@class="two"]/p[1]/text()[5]').extract())).split("[u'")[1].split("']")[0]
+			item['origlocation'] = str(map(unicode.strip, site.xpath('.//li[@class="ticket__stops__item"]/p[1]/text()[5]').extract())).split("[u'")[1].split("']")[0]
 			item['destcity'] = str(map(unicode.strip, site.xpath('.//p[@class="arrive"]/text()[3]').extract())).split("[u'")[1].split("']")[0]
 			item['destlocation'] = str(map(unicode.strip, site.xpath('.//p[@class="arrive"]/text()[5]').extract())).split("[u'")[1].split("']")[0]
 			item['timescraped'] = str(datetime.datetime.now().time())
